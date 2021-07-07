@@ -39,6 +39,7 @@ public class dbView extends AppCompatActivity {
                 while(res.moveToNext()){
                     buffer.append("Email :"+res.getString(0)+"\n");
                     buffer.append("Password:"+res.getString(1)+"\n");
+                    buffer.append("Date:"+res.getString(2)+"\n\n");
                     
                    }
 

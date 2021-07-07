@@ -23,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("create Table users(email TEXT Primary Key,password TEXT)");
+        myDB.execSQL("create Table users(email TEXT Primary Key,password TEXT,DATETIME DEFAULT (datetime('now','localtime')))");
 
     }
 
