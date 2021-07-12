@@ -83,6 +83,14 @@
 
         android:textStyle="bold" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NDKTest"
+        android:id="@+id/ndkTest"
+        android:layout_below="@id/loginButton"
+        />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -94,6 +102,7 @@
         android:visibility="invisible"
 
         />
+
 
 
 </RelativeLayout>

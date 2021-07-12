@@ -3,6 +3,18 @@ plugins {
 }
 
 android {
+
+    buildTypes {
+    
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+}
+
+android {
     compileSdkVersion 30
 
     defaultConfig {

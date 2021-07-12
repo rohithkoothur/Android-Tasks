@@ -28,7 +28,7 @@ import static android.content.ContentValues.TAG;
 public class MainActivity extends AppCompatActivity {
     FirebaseFirestore fstore;
     EditText mEmail,mPassword,mNumber,mName;
-    Button mRegister,mLogin;
+    Button mRegister,mLogin,mNDKTest;
     FirebaseAuth mFirebaseAuth;
     ProgressBar progressBar;
     String userID;
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mRegister =(Button) findViewById(R.id.registerButton);
         mLogin =(Button) findViewById(R.id.loginButton);
         fstore = FirebaseFirestore.getInstance();
+        mNDKTest = findViewById(R.id.ndkTest);
 
 
         mRegister.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +106,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Loginactivity.class);
                 startActivity(intent);
+            }
+        });
+
+        mNDKTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(),NdkTestActivity.class);
+                startActivity(intent1);
             }
         });
 
