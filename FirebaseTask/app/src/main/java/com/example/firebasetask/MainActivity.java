@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,7 +29,9 @@ import static android.content.ContentValues.TAG;
 public class MainActivity extends AppCompatActivity {
     FirebaseFirestore fstore;
     EditText mEmail,mPassword,mNumber,mName;
-    Button mRegister,mLogin,mNDKTest;
+    Button mRegister;
+
+    TextView mLogin,mNDKTest;
     FirebaseAuth mFirebaseAuth;
     ProgressBar progressBar;
     String userID;
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mNumber = (EditText) findViewById(R.id.number);
         mPassword = (EditText) findViewById(R.id.password);
         mRegister =(Button) findViewById(R.id.registerButton);
-        mLogin =(Button) findViewById(R.id.loginButton);
+        mLogin =(TextView) findViewById(R.id.loginTextview);
         fstore = FirebaseFirestore.getInstance();
         mNDKTest = findViewById(R.id.ndkTest);
 
@@ -101,23 +104,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Loginactivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mNDKTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(),NdkTestActivity.class);
-                startActivity(intent1);
-            }
-        });
 
 
 
+
+
+
+    }
+
+
+    public void gotoLogin(View view) {
+        Intent intent = new Intent(getApplicationContext(),Loginactivity.class);
+        startActivity(intent);
+    }
+
+    public void ndkTest(View view) {
+        Intent intent = new Intent(getApplicationContext(),NdkTestActivity.class);
+        startActivity(intent);
     }
 }
